@@ -4,15 +4,16 @@
 // @description  Give five star with single click
 // @updateURL    https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
-// @author       jqqqqqqqqqq
+// @author       jqqqqqqqqqq && HiMiller
 // @match        https://opr.ingress.com/recon
 // @grant        none
 // ==/UserScript==
 
+
 var buttons = [
-	{button:"Five Star", total:5, name:5, history:5, unique:5, location:5, safety:5},
-	{button:"553355", total:5, name:5, history:3, unique:3, location:5, safety:5},
-	{button:"533355", total:5, name:3, history:3, unique:3, location:5, safety:5},
+    {button:"五星好评", total:5, name:5, history:5, unique:5, location:5, safety:5},
+    {button:"三星勉强", total:5, name:5, history:3, unique:3, location:5, safety:5},
+    {button:"一分滚粗", total:1, name:0, history:0, unique:0, location:1, safety:0},
 ];
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -37,10 +38,26 @@ function add_button() {
         button.className = "button big-submit-button";
         button.appendChild(textnode);
         button_region.appendChild(button);
-        button.onclick = function(){rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);};
+        button.onclick = function(){
+            if (button_data["total"] !== 1){
+                rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);
+                submit();
+                toRecon();
+            } else if (button_data["total"] === 1){
+                document.getElementsByClassName('button')[1].click();
+                toRecon();
+            }
+        };
     });
 }
 
+function toRecon(){
+    window.location.assign("https://opr.ingress.com/recon");
+}
+
+function submit(){
+    document.querySelector("#submitDiv > button").click();
+}
 
 (function() {
     add_button();
