@@ -2,8 +2,8 @@
 // @name         5 Star One Key
 // @version      0.23
 // @description  Give five star with single click
-// @updateURL    https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
-// @downloadURL  https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
+// @updateURL    https://github.com/MillerZou/5StarOneKey/raw/master/onekey(HiMiller).user.js
+// @downloadURL  https://github.com/MillerZou/5StarOneKey/raw/master/onekey(HiMiller).user.js
 // @author       jqqqqqqqqqq && HiMiller
 // @match        https://opr.ingress.com/recon
 // @grant        none
