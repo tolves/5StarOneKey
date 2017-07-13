@@ -39,12 +39,12 @@ function add_button() {
         button.appendChild(textnode);
         button_region.appendChild(button);
         button.onclick = function(){
+            rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);
             if (button_data["total"] !== 1){
-                rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);
                 submit();
                 toRecon();
             } else if (button_data["total"] === 1){
-                document.getElementsByClassName('button')[1].click();
+                document.querySelector('.modal-body button:last-child').click();
                 toRecon();
             }
         };
