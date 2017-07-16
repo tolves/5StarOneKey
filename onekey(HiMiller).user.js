@@ -34,7 +34,7 @@ function rate_portal(total, name, history, unique, location, safety) {
 
 function add_button() {
     var descriptionDiv = document.getElementById("descriptionDiv");
-	var submitButton = document.getElementById("submitDiv");
+    var submitButton = document.getElementById("submitDiv");
     buttons.forEach(function(button_data) {
         var button = document.createElement("button");
         var textnode = document.createTextNode(button_data["button"]);
@@ -43,14 +43,14 @@ function add_button() {
         descriptionDiv.appendChild(br);
         button.appendChild(textnode);
         descriptionDiv.appendChild(button);
-		//submitButton.appendChild(button);
+        //submitButton.appendChild(button);
         button.onclick = function(){
             rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);
             if (button_data["total"] !== 1){
                 submit();
                 setTimeout(toRecon,800);
             } else if (button_data["total"] === 1){
-				submit();
+                submit();
                 document.querySelector('.modal-body button:last-child').click();
                 setTimeout(toRecon,800);
             }
@@ -66,6 +66,16 @@ function submit(){
     document.querySelector("#submitDiv > button").click();
 }
 
+function addAtt(){
+    var body = document.getElementsByTagName('body')[0];
+    body.setAttribute("onkeydown","noNumbers(event)");
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.innerHTML='function noNumbers(e){if(e.which){keynum=e.which;}keychar=String.fromCharCode(keynum);console.log(keychar);if(keychar==1){document.getElementsByClassName("big-submit-button")[2].click()}else if(keychar==3){document.getElementsByClassName("big-submit-button")[1].click()}else if(keychar==5){document.getElementsByClassName("big-submit-button")[0].click()}}';
+    body.appendChild(s);
+}
+
 (function() {
     add_button();
+    addAtt();
 })();
