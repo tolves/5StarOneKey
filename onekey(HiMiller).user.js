@@ -31,13 +31,15 @@ function rate_portal(total, name, history, unique, location, safety) {
 }
 
 function add_button() {
-    var button_region = document.getElementById("submitDiv");
+    var descriptionDiv = document.getElementById("descriptionDiv");
     buttons.forEach(function(button_data) {
         var button = document.createElement("button");
         var textnode = document.createTextNode(button_data["button"]);
         button.className = "button big-submit-button";
+        var br = document.createElement('br');
+        descriptionDiv.appendChild(br);
         button.appendChild(textnode);
-        button_region.appendChild(button);
+        descriptionDiv.appendChild(button);
         button.onclick = function(){
             rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);
             if (button_data["total"] !== 1){
