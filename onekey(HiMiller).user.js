@@ -42,10 +42,10 @@ function add_button() {
             rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);
             if (button_data["total"] !== 1){
                 submit();
-                toRecon();
+                setTimeout(toRecon,800);
             } else if (button_data["total"] === 1){
                 document.querySelector('.modal-body button:last-child').click();
-                toRecon();
+                setTimeout(toRecon,800);
             }
         };
     });
