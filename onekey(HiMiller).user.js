@@ -23,15 +23,18 @@ var buttons = [
 
 function rate_portal(total, name, history, unique, location, safety) {
     document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div.btn-group > button:nth-child(" + total + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(5) > button:nth-child(" + name + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(10) > button:nth-child(" + history + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(15) > button:nth-child(" + unique + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > button:nth-child(" + location + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(1) > div:nth-child(11) > button:nth-child(" + safety + ")").click();
+    if(total !== 1){
+        document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(5) > button:nth-child(" + name + ")").click();
+        document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(10) > button:nth-child(" + history + ")").click();
+        document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(15) > button:nth-child(" + unique + ")").click();
+        document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > button:nth-child(" + location + ")").click();
+        document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(1) > div:nth-child(11) > button:nth-child(" + safety + ")").click();
+    }
 }
 
 function add_button() {
     var descriptionDiv = document.getElementById("descriptionDiv");
+	var submitButton = document.getElementById("submitDiv");
     buttons.forEach(function(button_data) {
         var button = document.createElement("button");
         var textnode = document.createTextNode(button_data["button"]);
@@ -40,12 +43,14 @@ function add_button() {
         descriptionDiv.appendChild(br);
         button.appendChild(textnode);
         descriptionDiv.appendChild(button);
+		//submitButton.appendChild(button);
         button.onclick = function(){
             rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);
             if (button_data["total"] !== 1){
                 submit();
                 setTimeout(toRecon,800);
             } else if (button_data["total"] === 1){
+				submit();
                 document.querySelector('.modal-body button:last-child').click();
                 setTimeout(toRecon,800);
             }
