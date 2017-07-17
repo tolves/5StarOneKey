@@ -39,8 +39,8 @@ function add_button() {
         var button = document.createElement("button");
         var textnode = document.createTextNode(button_data["button"]);
         button.className = "button big-submit-button";
-        var br = document.createElement('br');
-        descriptionDiv.appendChild(br);
+ //       var br = document.createElement('br');
+ //       descriptionDiv.appendChild(br);
         button.appendChild(textnode);
         descriptionDiv.appendChild(button);
         //submitButton.appendChild(button);
