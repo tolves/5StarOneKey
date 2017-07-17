@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         5 Star One Key
-// @version      0.24
+// @version      0.23
 // @description  Give five star with single click
 // @updateURL    https://github.com/MillerZou/5StarOneKey/raw/master/onekey(HiMiller).user.js
 // @downloadURL  https://github.com/MillerZou/5StarOneKey/raw/master/onekey(HiMiller).user.js
@@ -24,9 +24,9 @@ var buttons = [
 function rate_portal(total, name, history, unique, location, safety) {
     document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div.btn-group > button:nth-child(" + total + ")").click();
     if(total !== 1){
-        document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(5) > button:nth-child(" + name + ")").click();
-        document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(10) > button:nth-child(" + history + ")").click();
-        document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(15) > button:nth-child(" + unique + ")").click();
+        document.querySelector("#AnswersController > form > div:nth-child(2) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(5) > button:nth-child(" + name + ")").click();
+        document.querySelector("#AnswersController > form > div:nth-child(2) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(10) > button:nth-child(" + history + ")").click();
+        document.querySelector("#AnswersController > form > div:nth-child(2) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(15) > button:nth-child(" + unique + ")").click();
         document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > button:nth-child(" + location + ")").click();
         document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(1) > div:nth-child(11) > button:nth-child(" + safety + ")").click();
     }
@@ -39,8 +39,8 @@ function add_button() {
         var button = document.createElement("button");
         var textnode = document.createTextNode(button_data["button"]);
         button.className = "button big-submit-button";
- //       var br = document.createElement('br');
- //       descriptionDiv.appendChild(br);
+        var br = document.createElement('br');
+        descriptionDiv.appendChild(br);
         button.appendChild(textnode);
         descriptionDiv.appendChild(button);
         //submitButton.appendChild(button);
@@ -75,8 +75,18 @@ function addAtt(){
     body.appendChild(s);
 }
 
+function changeDup(){
+    var descriptionDiv = document.getElementById("descriptionDiv");
+    var dup = descriptionDiv.parentNode.nextSibling.nextSibling.lastChild.previousSibling;
+    var starts = descriptionDiv.nextSibling.nextSibling;
+    descriptionDiv.parentNode.appendChild(dup);
+    descriptionDiv.parentNode.nextSibling.nextSibling.appendChild(starts);
+    descriptionDiv.style.width="16%";
+//    console.log(descriptionDiv);
+}
+
 (function() {
+    changeDup();
     add_button();
     addAtt();
 })();
-
