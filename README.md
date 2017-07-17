@@ -25,3 +25,5 @@ chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=aa68d85a-a367-4
 插入/替换到buttons那个list里即可
 ------------------------------------------------------------------------------------
 
+三分总评改为4星
+小键盘：1,2,3分别对应五，三，一 

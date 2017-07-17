@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         5 Star One Key
-// @version      0.23
+// @version      0.24
 // @description  Give five star with single click
 // @updateURL    https://github.com/MillerZou/5StarOneKey/raw/master/onekey(HiMiller).user.js
 // @downloadURL  https://github.com/MillerZou/5StarOneKey/raw/master/onekey(HiMiller).user.js
@@ -11,9 +11,9 @@
 
 
 var buttons = [
-    {button:"五星好评", total:5, name:5, history:5, unique:5, location:5, safety:5},
-    {button:"三星勉强", total:5, name:5, history:3, unique:3, location:5, safety:5},
-    {button:"一分滚粗", total:1, name:0, history:0, unique:0, location:1, safety:0},
+    {button:"五", total:5, name:5, history:5, unique:5, location:5, safety:5},
+    {button:"三", total:4, name:5, history:3, unique:3, location:4, safety:5},
+    {button:"一", total:1, name:0, history:0, unique:0, location:1, safety:0},
 ];
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -71,7 +71,7 @@ function addAtt(){
     body.setAttribute("onkeydown","noNumbers(event)");
     var s = document.createElement('script');
     s.type = 'text/javascript';
-    s.innerHTML='function noNumbers(e){if(e.which){keynum=e.which;}keychar=String.fromCharCode(keynum);console.log(keychar);if(keychar==1){document.getElementsByClassName("big-submit-button")[2].click()}else if(keychar==3){document.getElementsByClassName("big-submit-button")[1].click()}else if(keychar==5){document.getElementsByClassName("big-submit-button")[0].click()}}';
+    s.innerHTML='function noNumbers(e){if(e.which){keynum=e.which;}keychar=String.fromCharCode(keynum);console.log(keychar);if(keychar==1||keychar=="c"){document.getElementsByClassName("big-submit-button")[2].click()}else if(keychar==3||keychar=="b"){document.getElementsByClassName("big-submit-button")[1].click()}else if(keychar==5||keychar=="a"){document.getElementsByClassName("big-submit-button")[0].click()}}';
     body.appendChild(s);
 }
 
@@ -79,3 +79,4 @@ function addAtt(){
     add_button();
     addAtt();
 })();
+
