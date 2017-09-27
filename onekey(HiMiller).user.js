@@ -4,7 +4,7 @@
 // @description  Give five star with single click
 // @updateURL    https://github.com/MillerZou/5StarOneKey/raw/master/onekey(HiMiller).user.js
 // @downloadURL  https://github.com/MillerZou/5StarOneKey/raw/master/onekey(HiMiller).user.js
-// @author       jqqqqqqqqqq && HiMiller
+// @author       jqqqqqqqqqq && HiMiller && tolves
 // @match        https://opr.ingress.com/recon
 // @grant        none
 // ==/UserScript==
@@ -24,11 +24,12 @@ var buttons = [
 function rate_portal(total, name, history, unique, location, safety) {
     document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div.btn-group > button:nth-child(" + total + ")").click();
     if(total !== 1){
-        document.querySelector("#AnswersController > form > div:nth-child(2) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(5) > button:nth-child(" + name + ")").click();
-        document.querySelector("#AnswersController > form > div:nth-child(2) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(10) > button:nth-child(" + history + ")").click();
-        document.querySelector("#AnswersController > form > div:nth-child(2) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(15) > button:nth-child(" + unique + ")").click();
-        document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > button:nth-child(" + location + ")").click();
-        document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(1) > div:nth-child(11) > button:nth-child(" + safety + ")").click();
+//        document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div.nth-child(5) > button:nth-child(" + name + ")").click();
+        document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-of-type(1) > button:nth-child(" + name + ")").click();
+        document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-of-type(2) > button:nth-child(" + history + ")").click();
+        document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-of-type(3) > button:nth-child(" + unique + ")").click();
+        document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(3) > div:nth-child(6) > button:nth-child(" + location + ")").click();
+        document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(3) > div:nth-child(11) > button:nth-child(" + safety + ")").click();
     }
 }
 
@@ -83,6 +84,16 @@ function changeDup(){
     descriptionDiv.parentNode.nextSibling.nextSibling.appendChild(starts);
     descriptionDiv.style.width="16%";
 //    console.log(descriptionDiv);
+}
+
+function addMetal(){
+    var playerStats = document.getElementById("player_stats");
+    console.log(playerStats.lastChild.previousSibling);
+    playerStats = playerStats.lastChild.previousSibling;
+    var p = document.createElement("p");
+    var textnode = document.createTextNode('test');
+    p.appendChild(textnode);
+    playerStats.appendChild(p);
 }
 
 (function() {
