@@ -51,9 +51,10 @@ function add_button() {
                 submit();
                 setTimeout(toRecon,800);
             } else if (button_data["total"] === 1){
-                document.getElementsByClassName('button')[1].click();
+                //document.getElementsByClassName('button')[1].click();
+                document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div:nth-of-type(2) > button:nth-child(1)").click();
                // submit();
-               // document.querySelector('.modal-body button:last-child').click();
+                document.querySelector('.modal-body button:last-child').click();
                 setTimeout(toRecon,800);
             }
         };
