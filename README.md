@@ -4,10 +4,8 @@
 使用教程
 -------------
 首先，浏览器安装了tampermonkey之类的userjs插件，然后点击
-https://github.com/MillerZou/5StarOneKey/raw/master/onekey(HiMiller).user.js
+https://github.com/tolves/5StarOneKey/raw/master/onekey(HiMiller).user.js
 浏览器会弹出安装界面
-如果上面的链接无效点击这个试试：
-chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=aa68d85a-a367-46bf-abf2-208d7a4f4234
 
 源版本由@jqqqqqqqqqq开发，感谢大佬！
 源版本地址：https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
