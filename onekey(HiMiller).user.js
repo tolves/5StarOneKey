@@ -103,6 +103,7 @@ function addMetal(){
 function query_bed(title){
     var descriptionDiv = document.getElementById("descriptionDiv");
     title = $('#descriptionDiv>a').eq(0).html().trim();
+    console.log(title);
 	$.ajax({
 		url: "https://bed.520.land/bed/"+title,
 		type : 'GET',
@@ -112,15 +113,15 @@ function query_bed(title){
 		jsonp : 'callback',
 		jsonpCallback: 'callback',
 		success : function(result){
+			console.log(result);
 			for(i=0; i < result.length;i++){
 			//	var arr = result[i].split(",");
-                var span = document.createElement("span");
-                var textnode = document.createTextNode(result[i]);
-                //textnode.className = "button big-submit-button";
-                var br = document.createElement('br');
-                descriptionDiv.appendChild(br);
-                span.appendChild(textnode);
-                descriptionDiv.appendChild(span);
+                	var span = document.createElement("span");
+                	var textnode = document.createTextNode(result[i]);
+                	var br = document.createElement('br');
+                	descriptionDiv.appendChild(br);
+                	span.appendChild(textnode);
+                	descriptionDiv.appendChild(span);
 			}
 
 		},
