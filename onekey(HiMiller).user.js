@@ -1,4 +1,5 @@
 // ==UserScript==
+// @require http://code.jquery.com/jquery-1.12.4.min.js
 // @name         5 Star One Key
 // @version      0.23
 // @description  Give five star with single click
@@ -36,6 +37,7 @@ function rate_portal(total, name, history, unique, location, safety) {
 function add_button() {
     var descriptionDiv = document.getElementById("descriptionDiv");
     var submitButton = document.getElementById("submitDiv");
+
     buttons.forEach(function(button_data) {
         var button = document.createElement("button");
         var textnode = document.createTextNode(button_data["button"]);
@@ -59,6 +61,7 @@ function add_button() {
             }
         };
     });
+    setTimeout(query_bed,3000);
 }
 
 function toRecon(){
@@ -90,7 +93,6 @@ function changeDup(){
 
 function addMetal(){
     var playerStats = document.getElementById("player_stats");
-    console.log(playerStats.lastChild.previousSibling);
     playerStats = playerStats.lastChild.previousSibling;
     var p = document.createElement("p");
     var textnode = document.createTextNode('test');
@@ -98,8 +100,38 @@ function addMetal(){
     playerStats.appendChild(p);
 }
 
-(function() {
+function query_bed(title){
+    var descriptionDiv = document.getElementById("descriptionDiv");
+    title = $('#descriptionDiv>a').eq(0).html().trim();
+	$.ajax({
+		url: "https://bed.520.land/bed/"+title,
+		type : 'GET',
+		cache: false,
+		async : false,
+		dataType : 'jsonp', // 类型
+		jsonp : 'callback',
+		jsonpCallback: 'callback',
+		success : function(result){
+			for(i=0; i < result.length;i++){
+			//	var arr = result[i].split(",");
+                var span = document.createElement("span");
+                var textnode = document.createTextNode(result[i]);
+                //textnode.className = "button big-submit-button";
+                var br = document.createElement('br');
+                descriptionDiv.appendChild(br);
+                span.appendChild(textnode);
+                descriptionDiv.appendChild(span);
+			}
+
+		},
+		error: function(){
+			console.log('callback error or connection was interupted');
+		}
+	});
+}
+
+window.onload = (function() {
     changeDup();
-    add_button();
     addAtt();
-})();
+    add_button();
+});
