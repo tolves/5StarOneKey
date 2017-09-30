@@ -105,7 +105,7 @@ function query_bed(title){
     title = $('#descriptionDiv>a').eq(0).html().trim();
     console.log(title);
 	$.ajax({
-		url: "https://bed.520.land/bed/"+title,
+		url: "http://xxxxx/+title,
 		type : 'GET',
 		cache: false,
 		async : false,
