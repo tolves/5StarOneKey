@@ -3,8 +3,8 @@
 
 使用教程
 -------------
-首先，浏览器安装了tampermonkey之类的userjs插件，然后点击
-https://github.com/tolves/5StarOneKey/raw/master/onekey(HiMiller).user.js
+首先，浏览器安装了tampermonkey，然后点击
+https://github.com/tolves/5StarOneKey/raw/master/onekey.user.js
 浏览器会弹出安装界面
 
 源版本由@jqqqqqqqqqq开发，感谢大佬！
@@ -23,5 +23,5 @@ https://github.com/tolves/5StarOneKey/raw/master/onekey(HiMiller).user.js
 插入/替换到buttons那个list里即可
 ------------------------------------------------------------------------------------
 
-三分总评改为4星
-小键盘：1,2,3分别对应五，三，一 
+使用键盘2,3,4可一键打总分 2,3,4
+空格键提交并刷新进入下一个
