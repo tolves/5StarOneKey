@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         5 Star One Key
-// @version      0.35
+// @version      0.36
 // @description  Give five star with single click or one button
 // @updateURL    https://github.com/tolves/5StarOneKey/raw/master/onekey.user.js
 // @downloadURL  https://github.com/tolves/5StarOneKey/raw/master/onekey.user.js
@@ -14,9 +14,10 @@ var auto_select = true;
 var big_stars = false;
 
 var buttons = [
-    {button:"2分", total:5, name:5, history:3, unique:3, location:5, safety:5},
-    {button:"3分", total:5, name:3, history:3, unique:3, location:5, safety:5},
-    {button:"4分", total:3, name:5, history:3, unique:3, location:4, safety:4},
+    {button:"2分低文化", total:2, name:5, history:3, unique:1, location:5, safety:5},
+    {button:"2分低独特", total:2, name:5, history:1, unique:3, location:5, safety:5},
+    {button:"3分", total:3, name:5, history:3, unique:3, location:5, safety:5},
+    {button:"4分", total:4, name:5, history:4, unique:4, location:5, safety:5},
 ];
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
