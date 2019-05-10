@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         5 Star One Key
-// @version      0.39
+// @version      0.40
 // @description  Give five star with single click or one button
 // @updateURL    https://github.com/tolves/5StarOneKey/raw/master/onekey.user.js
 // @downloadURL  https://github.com/tolves/5StarOneKey/raw/master/onekey.user.js
@@ -129,7 +129,7 @@ function addAtt(){
     body.setAttribute("onkeydown","noNumbers(event)");
     var s = document.createElement('script');
     s.type = 'text/javascript';
-    s.innerHTML='function noNumbers(e){if(e.which){keynum=e.which;}keychar=String.fromCharCode(keynum);console.log(keychar);if(keychar==2){document.getElementsByClassName("button submit-button")[0].click()}else if(keychar==3){document.getElementsByClassName("button submit-button")[1].click()}else if(keychar==4){document.getElementsByClassName("button submit-button")[2].click()}else if(keychar==" "){document.getElementsByClassName("button submit-button")[3].click()}}';
+    s.innerHTML='function noNumbers(e){if(e.which){keynum=e.which;}keychar=String.fromCharCode(keynum);console.log(keychar);if(keychar==1){document.getElementsByClassName("button submit-button")[0].click()}else if(keychar==2){document.getElementsByClassName("button submit-button")[1].click()}else if(keychar==3){document.getElementsByClassName("button submit-button")[2].click()}else if(keychar==4){document.getElementsByClassName("button submit-button")[3].click()}else if(keychar==" "){document.getElementsByClassName("button submit-button")[4].click()}}';
     body.appendChild(s);
 }
 
