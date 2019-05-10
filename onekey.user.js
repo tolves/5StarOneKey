@@ -13,7 +13,7 @@
 var auto_select = true;
 var big_stars = false;
 
-var buttons = [
+var buttons = [ 
     {button:"2分低文化", total:2, name:5, history:1, unique:3, location:5, safety:5},
     {button:"2分低独特", total:2, name:5, history:3, unique:1, location:5, safety:5},
     {button:"3分", total:3, name:5, history:3, unique:3, location:5, safety:5},
