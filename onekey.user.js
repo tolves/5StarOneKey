@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         5 Star One Key
-// @version      0.38
+// @version      0.39
 // @description  Give five star with single click or one button
 // @updateURL    https://github.com/tolves/5StarOneKey/raw/master/onekey.user.js
 // @downloadURL  https://github.com/tolves/5StarOneKey/raw/master/onekey.user.js
